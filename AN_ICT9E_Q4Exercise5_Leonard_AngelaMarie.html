@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Raleway:ital,wght@1,200&display=swap" rel="stylesheet">
+    <style type="text/css">
+		h1,h2,h3,th{
+			font-family: 'EB Garamond';
+			padding:10px;
+		}
+		p,td{
+			font-family: 'Raleway';
+			padding:10px;}
+		img{
+			width: 150px;
+		}
+		#fig1, #fig2{
+			width:500px;
+		}
+
+	</style>
+	<title>EX#5 Light Bulb</title>
+</head>
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3_NCTv7dlZ68GULuo6bApYWdy4kd3N2J4NJnTUEgSwRrKgwbssBIQ5hlF_P9bxZ5UBBw&usqp=CAU">
+	<div class="container mt-5">
+<h2>How does a light bulb, light up?</h2>
+<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light.</p>
+
+<audio id="Audio" src="turnonlights.mp3"></audio>
+
+<button class="btn btn-warning" onmouseover="On()" onmouseout="Off()">On Light</button>
+<img src="turnoff.png" id="Bulb">
+
+<h2>The Ohm's Law Equation</h2>
+
+<p>Ohm's principal discovery was that the amount of electric current through a metal conductor in a circuit is directlyproportional to the voltage impressed across it, for any given temperature. Ohm expressed his discovery in the form of a simple equation, describing how voltage, current, and resistance interrelate: <kbd>Voltage (E) = Current (I) Resistance (R)</kbd></p> 
+
+<img src="fig1.png" id="fig1">
+
+<p>Calculate the amount of current (I) in a circuit, given values of voltage (E) and resistance (R):<kbd> I=E/R</kbd></p>
+
+<div class="row">
+    <div class="col-6">
+        <img src="fig2.png" id="fig2"><br>
+</div>
+<div class="col-6 mt-5">
+
+    Enter Voltage (E): <input type="text" id="V" class="form-control"><br>
+    Enter Resistance (R):<input type="text" id="R" class="form-control"><br>
+     <input type="submit" value="COMPUTE" class="btn btn-primary" onclick="Compute()"><br><br>
+     <h5 id="Output"></h5>
+   </div>
+</div>
+
+
+
+<script type="text/javascript">
+	function On(){
+	   document.getElementById('Bulb').src="turnon.png";
+	   document.getElementById('Audio').play();
+	}
+	function Off(){
+      document.getElementById('Bulb').src="turnoff.png";
+	  document.getElementById('Audio').pause();
+}
+	function Compute(){
+     let Voltage = document.getElementById('V').value;
+	 let Resistance = document.getElementById('R').value;
+	 let Current = Voltage/Resistance;
+	 document.getElementById('Output').innerHTML="The Current(I) is:"+ Current;
+}
+</script>
+
+
+
+<p>Source:<a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up</a></p>
+<p>Source:<a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/</a></p>
+</body>
+<footer> <small>&copy; AMLeonard 2023 </small></footer>
+</html>
